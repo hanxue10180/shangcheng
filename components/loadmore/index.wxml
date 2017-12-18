@@ -1,0 +1,21 @@
+<block wx:if="{{mtype==2}}">
+<view class="zan-loadmore zan-loadmore--nomore" hidden="{{hidden}}">
+  <view class="zan-loadmore__tips" style="background-color:{{tipcolor}}">
+    <view class="zan-loadmore__dot"></view>
+  </view>
+</view>
+</block>
+<block wx:elif="{{mtype==3}}">
+<view class="zan-loadmore zan-loadmore--nodata" hidden="{{hidden}}">
+  <view class="zan-loadmore__tips"  style="background-color:{{tipcolor}}">{{ nodata_str}}</view>
+</view>
+</block>
+
+<block wx:elif="{{mtype==1}}" >
+<view class="zan-loadmore" hidden="{{hidden}}">
+  <image class="zan-loading" src="../../assets/imgs/loadmore.png"></image>
+  <view class="zan-loadmore__tips" style="background-color:{{tipcolor}}">加载中...</view>
+</view>
+</block>
+
+

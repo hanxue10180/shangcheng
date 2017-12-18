@@ -1,0 +1,17 @@
+.scroll-view-x{
+  background-color: #fff;
+  white-space: nowrap;
+  position:fixed;
+  z-index:10;
+  top:0
+}
+.scroll-view-x .scroll-view-item{
+  display:inline-block;
+  margin:0 35rpx;
+  line-height: 33px;
+  cursor: pointer;
+}
+.on{
+  border-bottom: 2px solid red;
+  color: red
+}

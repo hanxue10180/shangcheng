@@ -1,0 +1,125 @@
+page{
+  background:#fefefe;
+}
+.container{
+  min-height: 100%;
+  overflow: hidden;
+  overflow-y: hidden;
+}
+.userinfo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  padding-bottom:14rpx;
+	background:#e02e24;
+  width: 750rpx;
+  height:250rpx;
+}
+
+.userinfo-avatar {
+	width: 140rpx;
+	height: 140rpx;
+	margin: 20rpx;
+	border-radius: 50%;
+  border:2px solid #e65850;
+}
+
+.userinfo-nickname {
+  color: #FFF;
+}
+
+
+.version {
+  width:100%;
+  height: 40rpx;
+	line-height: 40rpx;
+	font-size: 24rpx;
+	text-align: center;  
+  padding: 40rpx;
+}
+
+.my-item{
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding-left: 100rpx;
+}
+
+.about{
+    width: 100%;
+    background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 750rpx center;
+    background-size: 16rpx auto,750rpx auto;
+    margin: 20rpx 0; 
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 100rpx;
+}
+
+.order-state{
+  display:flex;
+  width:100%
+}
+.order-state .order-state-item{
+  width:150rpx;
+  height:150rpx;
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column
+}
+.order-state .order-state-item image{
+  display:block;
+  width:40rpx;
+  height:40rpx;
+  margin:5px auto;
+}
+.order-state .order-state-item text{
+  font-size:24rpx
+}
+.allOrder text{
+  display:inline-block;
+  color:#111;
+  font-size:28rpx;
+}
+.allOrder view{
+  display:inline-block;
+  position:absolute;
+  right:10px;
+  color:#E02E24;
+  font-size:24rpx;
+}
+.allOrder view image{
+  display:inline-block;
+  width:35rpx;
+  height:35rpx;
+  margin-top:-3px;
+}
+.my-info{
+  display:flex;
+  width:100%;
+  height: 160rpx;
+}
+.my-info .my-info-item{
+  width:187.5rpx;
+  height:160rpx;
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column
+}
+.my-info .my-info-item image{
+  display:block;
+  width:45rpx;
+  height:45rpx;
+  margin:7px auto;
+}
+.my-info .my-info-item text{
+  font-size:24rpx
+}
+.my-item image{
+  width:40rpx;
+  height:40rpx;
+  margin-top:-5rpx;
+  margin-right:15rpx
+}

@@ -1,0 +1,128 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="container"> 
+   <view class="swiper-container">
+      <swiperImg sHeight="748rpx" imgList="{{goodsDetail.pics}}" url="pic"></swiperImg>
+   </view>
+   <view class="goods-info">
+        <view class="goods-title"> {{goodsDetail.basicInfo.name}}</view>
+        <view class="goods-share" wx:if="{{goodsDetail.basicInfo.commissionType == 1}}">转发分享该商品，好友下单后可得 {{goodsDetail.basicInfo.commission}} 积分奖励</view>
+        <view class="goods-share" wx:if="{{goodsDetail.basicInfo.commissionType == 2}}">转发分享该商品，好友下单后可得 {{goodsDetail.basicInfo.commission}}元 现金奖励</view>
+        <view class="goods-price" style="padding-left:35rpx;">¥ {{selectSizePrice}}</view>
+        <view class="goods-price" style="color:#999;font-size:24rpx;">购买{{goodsDetail.basicInfo.numberOrders}}次</view>
+        <view class="goods-price" style="color:#999;font-size:24rpx;">共收到 {{goodsDetail.basicInfo.numberGoodReputation}} 次好评</view>
+   </view>
+   <view wx:if="{{hasMoreSelect}}" class="row-arrow" bindtap="bindGuiGeTap">
+      {{selectSize}}
+   </view>
+   <view wx:if="{{hasCoupons}}" class="row-arrow" bindtap='bindCouponTap'>
+    商品优惠券
+   </view>
+    <view class="goods-des-info">
+        <view class="label-title">商品介绍</view>
+        <view class="goods-text">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+         </view>
+    </view>
+    <view class="goods-des-info" style="margin-top:35rpx;" wx:if="{{reputation}}">
+        <view class="label-title" style="border-bottom:1px solid #eee;">商品评价<text style="color:red">（{{reputation.length}}）</text></view>
+        <view class="goods-text" style="margin-top:15rpx;" wx:for="{{reputation}}" wx:key="id">
+          <view style="width:100rpx;float:left;">
+            <image style="width: 100rpx; height: 100rpx;" src="{{item.user.avatarUrl}}"></image>
+            <view style="text-align:center;width:100rpx;">{{item.goods.goodReputationStr}}</view>
+          </view>
+          <view style="width:550rpx;float:left;margin-left:35rpx;border-bottom:1px solid #eee;">
+            <view>{{item.goods.goodReputationRemark}}</view>
+            <view style="color: #B0B0B0;font-size:24rpx;">{{item.goods.dateReputation}}     {{item.goods.property}}</view>
+          </view>
+        </view>
+    </view>
+    <view class="footer-box">        
+        <view class="contact">
+          <contact-button style="opacity:0;position:absolute;" type="default-dark"  session-from="weapp" size="27"></contact-button>
+          客服
+        </view>
+        <view class="shop-cart-btn" bindtap="goShopCar">
+            <view class="shop-num">({{shopNum}})</view>
+            购物车
+        </view>
+        <view class="join-shop-cart" bindtap="toAddShopCar">加入购物车</view>
+        <view class="now-buy" bindtap="tobuy">立即购买</view>
+   </view>
+    <view class="show-popup" hidden="{{hideShopPopup}}" >
+        <view class="popup-mask" bindtap="closePopupTap"></view>
+        <view class="popup-contents" style="height:auto">
+             <view class="pop-goods-info">
+                <view class="pop-img-box">
+                    <image src="{{goodsDetail.basicInfo.pic}}" class="goods-thumbnail"/>
+                </view>
+                <view class="pop-goods-des">
+                    <view class="pop-goods-title">{{goodsDetail.basicInfo.name}}</view>
+                    <view class="pop-goods-price">¥ {{selectSizePrice}}</view>
+                </view>
+                <view class="pop-goods-close" bindtap="closePopupTap"></view>
+             </view>
+             <view class="size-label-box">
+                <block wx:for="{{goodsDetail.properties}}" wx:for-item="property" wx:for-index="idx" wx:key="id">
+                <view class="label">{{property.name}}</view> 
+                <view class="label-item-box">
+                    <view class="label-item {{item.active ? 'active' : '' }}" wx:for="{{property.childsCurGoods}}" wx:key="id" bindtap="labelItemTap" data-propertyindex="{{idx}}" data-propertyid="{{property.id}}" data-propertyname="{{property.name}}" data-propertychildindex="{{index}}" data-propertychildid="{{item.id}}" data-propertychildname="{{item.name}}">
+                        {{item.name}}
+                    </view> 
+                </view>
+                </block>
+             </view> 
+             <view class="buy-num-box">
+                <view class="num-label">购买数量</view>
+                <view class="num-box">
+                    <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
+                    <view class="num-input">
+                       <input  type="number" value="{{buyNumber}}" disabled/>
+                    </view>
+                    <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
+                </view>
+             </view>  
+             <view class="popup-join-btn" wx:if="{{shopType =='addShopCar'}}" bindtap="addShopCar">
+                加入购物车
+             </view>
+             <view class="popup-join-btn" wx:if="{{shopType =='tobuy'}}" bindtap="buyNow">
+                立即购买
+             </view>                      
+        </view>
+    </view>
+    <view class="show-popup" hidden="{{hideCouponPopup}}">
+      <view class="popup-mask" bindtap="closePopupTap"></view>
+      <scroll-view scroll-y="true" class="popup-contents" style="margin-bottom:40px;">
+        <view class="couponsTitle" wx:if="{{couponsList.length}}">商品优惠券</view>
+        <view class="couponsList" wx:if="{{couponsList.length}}" >
+          <view class="coupon_item" wx:for="{{couponsList}}">
+            <view class="coupons_details">
+              <view class="coupon_price">¥ <text>{{item.moneyMin}}</text> </view>
+              <view class="coupon_full"> 满 {{item.moneyHreshold}} 元使用 </view>
+              <view class="coupon_time" wx:if="{{item.dateEndType == 0}}"> {{item.dateEnd}} 前有效 </view>
+              <view wx:if="{{item.dateEndType == 1}}"> 领取 {{item.dateEndDays}} 天内有效 </view>
+            </view>
+            <view class="coupons_receive" bindtap='receiveCoupons' data-id="{{item.id}}">
+              立即领取
+            </view>
+          </view>
+        </view>
+        <view class="couponsTitle" wx:if="{{couponsList1.length}}">通用优惠券</view>
+        <view class="couponsList" wx:if="{{couponsList1.length}}" >
+          <view class="coupon_item" wx:for="{{couponsList1}}">
+            <view class="coupons_details">
+              <view class="coupon_price">¥ <text>{{item.moneyMin}}</text> </view>
+              <view class="coupon_full"> 满 {{item.moneyHreshold}} 元使用 </view>
+              <view class="coupon_time" wx:if="{{item.dateEndType == 0}}"> {{item.dateEnd}} 前有效 </view>
+              <view wx:if="{{item.dateEndType == 1}}"> 领取 {{item.dateEndDays}} 天内有效 </view>
+            </view>
+            <view class="coupons_receive" bindtap='receiveCoupons' data-id="{{item.id}}">
+              立即领取
+            </view>
+          </view>
+        </view>
+        <view class="popup-join-btn" bindtap='closePopupTap' style="position:fixed;bottom:0">
+          完成
+        </view>
+      </scroll-view>
+    </view>
+</view>

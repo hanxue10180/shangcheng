@@ -1,0 +1,149 @@
+ /*总体主盒子*/  
+.container_search {  
+  position: relative;  
+  width: 100%;    
+  background-color: #fff;  
+  color: #939393;  
+}
+ /*顶部搜索栏*/
+.search_btn{
+  padding:7px 10px; 
+  background-color:#f2f2f2;
+  border-top:1px solid #d8d8d8;
+  border-bottom:1px solid #d8d8d8 ;
+  width:100%;
+  box-sizing:border-box;
+}
+.search_btn view{
+  height:30px;
+  background-color:#fff;
+  text-align:center;
+  line-height:30px;
+  border-radius:5rpx;
+}
+.search_btn view image{
+  width:30rpx;
+  height:30rpx;
+  margin-top:-5rpx;
+  display:inline-block ;
+}
+ /*左侧栏主盒子*/  
+.nav_left{  
+  /*设置行内块级元素（没使用定位）*/  
+  display: inline-block;  
+  width:200rpx;  
+  height: 100%;  
+  /*主盒子设置背景色为灰色*/  
+  background: #f5f5f5;   
+}  
+/*左侧栏list的item*/  
+.nav_left .nav_left_items{  
+  height: 40px;   
+  line-height: 40px;  
+  padding: 5px 35rpx;     
+  font-size: 26rpx; 
+}  
+/*左侧栏list的item被选中时*/  
+.nav_left .nav_left_items.active{  
+  /*背景色变成白色*/  
+  background: #fff;  
+  color: #ff4a4a; 
+}  
+/*右侧栏主盒子*/  
+.nav_right{   
+  display: inline-block;
+  height:100%;
+  width:550rpx;  
+  padding:14rpx;  
+  box-sizing: border-box;  
+  background: #fff;  
+  position:absolute;
+}  
+/*右侧栏list的item*/  
+.nav_right .nav_right_items{  
+  /*浮动向左*/  
+  float: left;  
+  /*每个item设置宽度是33.33%*/  
+  width: 33.33%;  
+  height:160rpx;  
+  text-align: center;  
+}  
+.nav_right .nav_right_items image{  
+  /*被图片设置宽高*/  
+  width: 80rpx;  
+  height:80rpx;  
+  margin-top:24rpx;  
+}  
+.nav_right .nav_right_items text{  
+  /*给text设成块级元素*/  
+  display: block;  
+  margin-top:14rpx;  
+  font-size: 24rpx;  
+  /*设置文字溢出部分为...*/  
+  overflow: hidden;  
+  white-space: nowrap;  
+  text-overflow: ellipsis;  
+} 
+.nodata_text
+{
+  color: black;
+  font-size: 14px;  
+  text-align: center;  
+} 
+.single_item{
+  width:100% ;
+  height:200rpx;
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom:14rpx;
+}
+.single_item .img-box{
+  width:200rpx;
+  height:200rpx;
+  overflow: hidden;
+  display: inline-block;
+  padding:10rpx;
+  box-sizing: border-box
+}
+.single_item .img-box image{
+   width: 100%;
+   height:100%;
+}
+.single_item .right-box{
+  width:300rpx;
+  height:100%;
+  display: inline-block;
+  border-bottom:1px solid #ddd;
+  vertical-align: top;
+  margin-left:15rpx;
+  padding-top:20rpx;
+  box-sizing: border-box;
+}
+.single_item .goods-title{
+  width:100%;
+  color:#000;
+  display: block;
+  margin-bottom:10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  font-size:28rpx
+}
+.single_item .goods-volume{
+  font-size: 22rpx;
+  margin-bottom: 40rpx;
+  display: block
+}
+.single_item .goods-price{
+  width: 280rpx;
+  color:#ff4a4a;
+  display: block;
+  font-size:28rpx;
+  font-weight:700
+}
+.single_item .goods-price .original-price{
+  font-size:20rpx;
+  color:#939393;
+  text-decoration:line-through;
+  font-weight: normal
+}

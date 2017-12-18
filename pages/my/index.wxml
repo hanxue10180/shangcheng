@@ -1,0 +1,78 @@
+<view class="container">
+	<view class="userinfo">
+		<image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+		<text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+	</view>
+  <view class="my-item">
+    <view class="allOrder" bindtap="allOrder" data-id="0">
+      <text style="display:inline-block">我的订单</text>
+      <view>全部订单 <image src='../../assets/imgs/more.png'></image></view>
+    </view>
+  </view>
+  <!--订单状态-->
+  <view class="order-state">
+    <view class="order-state-item" bindtap="allOrder" data-id='0'>
+      <image src='../../assets/imgs/order/fukuan.png'></image>
+      <text>待付款</text>
+    </view>
+    <view class="order-state-item" bindtap="allOrder" data-id='1'>
+      <image class="order-state-item" src='../../assets/imgs/order/fahuo.png'></image>
+      <text>待发货</text>
+    </view>
+    <view class="order-state-item" bindtap="allOrder" data-id='2'>
+      <image src='../../assets/imgs/order/shouhuo.png'></image>
+      <text>待收货</text>
+    </view>
+    <view class="order-state-item" bindtap="allOrder" data-id='3'>
+      <image src='../../assets/imgs/order/pingjia.png'></image>
+      <text>待评价</text>
+    </view>
+    <view class="order-state-item" bindtap="allOrder" data-id='4'>
+      <image src='../../assets/imgs/order/wancheng.png'></image>
+      <text>已完成</text>
+    </view>
+  </view>
+  <!--我的消息 优惠券 收藏 售后-->
+  <!--
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view class="my-info">
+    <navigator class="my-info-item" url="/pages/my-info/index">
+      <image src='../../assets/imgs/my-info/info.png'></image>
+      <text>我的消息</text>
+    </navigator>
+    <navigator class="my-info-item" url="/pages/my-coupon/index">
+      <image src='../../assets/imgs/my-info/quan.png'></image>
+      <text>我的优惠券</text>
+    </navigator>
+    <navigator class="my-info-item" url="/pages/my-collection/index">
+      <image src='../../assets/imgs/my-info/shoucang.png'></image>
+      <text>我的收藏</text>
+    </navigator>
+    <navigator class="my-info-item" url="/pages/my-refund/index">
+      <image src='../../assets/imgs/my-info/shouhou.png'></image>
+      <text>退款/售后</text>
+    </navigator>
+  </view>
+  -->
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view class="my-item">
+    <navigator url="/pages/my-coupon/index" hover-class="navigator-hover"><image src='../../assets/imgs/my-info/myquan.png'></image>我的优惠券</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/my-refund/index" hover-class="navigator-hover"><image src='../../assets/imgs/my-info/tuikuan.png'></image>退款/售后</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/select-address/index" hover-class="navigator-hover"><image src='../../assets/imgs/my-info/dizhi.png'></image>收货地址</navigator>
+  </view>
+  <view class="my-item" style="position:relative">
+    <button  open-type="contact" send-message-title="在线官方客服" style="width:100%;height:100%;position:absolute;opacity:0"></button>
+    <image src='../../assets/imgs/my-info/kefu.png'></image>官方客服
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/my-setUp/index" hover-class="navigator-hover"><image src='../../assets/imgs/my-info/shezhi.png'></image>设置</navigator>
+  </view>
+  <view class="about" bindtap="aboutUs">
+    关于我们
+  </view>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+</view>

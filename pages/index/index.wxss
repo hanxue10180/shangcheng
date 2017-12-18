@@ -1,0 +1,124 @@
+page{
+  background:#f9f9f9;
+  font-size:26rpx;
+  color:#1b1b1b;
+}
+.swiper-box{min-height: 1000rpx;}
+swiper-item image{width: 100%;height: 100%;}
+.slide-image{
+  width:750rpx;
+  height:150px;
+}
+.scroll-view-x{background-color: #fff;white-space: nowrap;}
+.notice{
+  display: flex;
+  justify-content: space-between;  
+  flex-wrap:wrap;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 750rpx;
+  margin-top: 10rpx;
+  background-color: #fff;
+}
+.notice_swiper{
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 635rpx;
+}
+.notice_iteml {
+  padding-left: 25rpx;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  font-size: 26rpx;
+  width: 80rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #999;
+}
+.notice_itemr {
+  padding-left: 10rpx;
+  font-size: 26rpx;
+  overflow: hidden;
+  color: #e64340;
+  width: 635rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.pos-fiexd{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.coupons{
+  margin-top:10rpx;
+  width: 100%;
+  height: 180rpx;
+  overflow: hidden;
+}
+.coupons-scroll{
+  white-space: nowrap;
+  height: 180rpx;
+  width: 100%;
+  background-color: #fff;
+}
+.coupons-item{
+  width:300rpx;
+  height: 180rpx;
+  margin: 10rpx;
+  padding-top: 20rpx;
+  padding-left: 15rpx;
+  background-color: #f1a83b;
+  box-sizing: content-box;
+  font-size: 20rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  color: #fff;
+  display: inline-block;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.navigator_second{
+  width:150rpx;
+  text-align:center;
+  display:inline-block;
+  height:115rpx;
+}
+.navigator_icon{
+  width:60rpx;
+  height:60rpx;
+}
+.navigator_text{
+  display:block;
+  width:100%;
+  font-size:24rpx
+}
+.no-more-goods{
+  text-align: center;
+  font-size: 24rpx;
+  padding-bottom:48rpx; 
+  color: #999;
+}
+.slide{
+  height:30rpx;
+  background:#fff;
+  with:100%;
+  padding:14rpx 0 5rpx 0
+}
+.slide .slide-bar{
+  width:230rpx;
+  margin:0 auto;
+  height:1.5px;
+  background:#eee;
+}
+.slide .slide-bar .slide-show{
+  height:100%;
+  background-color:#ff6969;
+  
+}
+
+

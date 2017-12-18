@@ -1,0 +1,50 @@
+<!--主盒子-->
+<view class="container_search" style="height:{{windowHeight}}px;">
+  <view class="search_btn">
+    <view bindtap='goSearch'>
+      <image src="../../assets/imgs/search.png"></image> 搜索商品
+    </view>
+  </view>
+  <view style="position:relative;height:{{windowHeight -46}}px ;overflow:hidden">
+    <!--左侧栏-->
+    <scroll-view class="nav_left" scroll-y="true" style="height:{{windowHeight -46}}px;">
+      <view style="height:auto;">
+        <block wx:for="{{tlist}}">
+          <!--当前项的id等于item项的id，那个就是当前状态-->
+          <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
+          <view class="nav_left_items {{curNav == item.firstType.id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.firstType.id}}">{{item.firstType.name}}        </view>
+        </block>
+      </view>
+    </scroll-view>
+    <!--右侧栏-->
+    <scroll-view class="nav_right" scroll-y="true" style="height:{{windowHeight -46}}px;" bindscrolltolower="loadmore">
+      <view style='height:auto;'>
+        <view wx:if="{{type_detail==2}}">
+          <view wx:for="{{list}}" class="single_item" bindtap='goDetail' data-id='{{item.id}}'>
+            <view class="img-box"><image src="{{item.pic}}"></image></view>
+            <view class="right-box">
+                <text class="goods-title">{{item.name}}</text>
+                <text class="goods-volume">已售 <text style="color:#ff4a4a">{{item.numberOrders}}</text> 件</text>
+                <text class="goods-price">￥{{item.minPrice}} <text class="original-price">￥{{item.originalPrice}}</text></text>
+            </view>
+          </view>
+          <loadmore mtype="3" hidden="{{hidden}}" tipcolor="#fff" nodata_str="已经没有更多了~"></loadmore> 
+        </view>
+        <!--如果有数据，才遍历项-->
+        <view wx:elif="{{ tlist[curIndex].second.length && type_detail}}">
+          <block wx:for="{{tlist[curIndex].second}}">
+            <view class="nav_right_items">
+            <!--界面跳转 -->
+              <view bindtap='getTypeDetail' data-id="{{item.id}}">
+                <image src="{{item.icon}}"></image>
+                <text>{{item.name}}</text>
+              </view>
+            </view>
+          </block>
+        </view>
+        <!--如果无数据，则显示数据-->
+        <view class="nodata_text" wx:else>该分类暂无数据</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,57 @@
+.zan-loadmore{
+  position:relative;
+  width:65%;
+  margin:0 auto;
+  line-height:20px;
+  font-size:14px;
+  text-align:center;
+  display: block;
+  vertical-align: middle
+}
+.zan-loading{
+  width:20px;
+  height:20px;
+  display:inline-block;
+  vertical-align:middle;
+  animation:weuiLoading 1s steps(12,end) infinite;
+}
+.zan-loadmore .zan-loading{
+  margin-right:4px
+}
+.zan-loadmore__tips{
+  display:inline-block;
+  vertical-align:middle;
+  height:20px;
+  line-height:20px;
+  color:#999
+}
+.zan-loadmore--nodata,.zan-loadmore--nomore{
+  border-top:1rpx solid #e5e5e5;
+}
+.zan-loadmore--nodata{
+  margin-top:20rpx
+}
+.zan-loadmore--nodata .zan-loadmore__tips{
+  position:relative;
+  top:-11px;
+  padding:0 6px
+}
+.zan-loadmore--nomore .zan-loadmore__tips{
+  position:relative;
+  top:-11px;
+  padding:0 6px
+}
+.zan-loadmore__dot{
+  position:absolute;
+  left:50%;
+  top:10px;
+  margin-left:-2px;
+  margin-top:-2px;
+  content:" ";
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background-color:#e5e5e5;
+  display:inline-block;
+  vertical-align:middle;
+}

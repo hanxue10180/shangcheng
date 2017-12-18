@@ -1,0 +1,20 @@
+<!--pages/search/index.wxml-->
+<view class="search_input">
+  <view class="search_input_left">
+    <image src='../../assets/imgs/search.png'></image> 
+    <input placeholder="输入商品名称" auto-focus/>
+  </view>
+  <view class="search_input_right"> 搜索 </view>
+</view>
+<view class="search_history">
+  <view class="search_title">历史搜索 <image src="../../assets/imgs/delete.png"></image></view>
+  <view class="search_content" >
+    <view wx:for="{{historyList}}">{{item}}</view>
+  </view>
+</view>
+<view class="search_hot">
+  <view class="search_title">热门搜索</view>
+  <view class="search_content">
+    <view wx:for="{{hotList}}">{{item}}</view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#FB5D5D",
+  "onReachBottomDistance": 10,
+  "usingComponents": {
+    "productBox": "../../components/product_box/index"
+  }
+}

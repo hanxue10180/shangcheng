@@ -1,0 +1,7 @@
+<view class="goods-container">
+  <view class="goods-box" wx:for="{{pList}}" wx:key="childIndex" wx:for-item="childItem" bindtap="product_detail" data-id="{{childItem.id}}">
+    <view class="img-box"><image src="{{childItem.pic}}"></image></view>
+    <text class="goods-title">{{childItem.name}}</text>
+    <text class="goods-price">￥{{childItem.minPrice}}</text>
+  </view>
+</view>

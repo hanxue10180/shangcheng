@@ -1,0 +1,35 @@
+/**app.wxss**/
+page{background:#f9f9f9;font-size:26rpx;color: #1b1b1b;}
+image{vertical-align: middle;}
+.text-center{text-align: center;}
+.pull-left{float: left;}
+.pull-right{float: right;}
+.clearfix{clear: both;}
+
+.bg-fff{background-color:#fff;}
+.mt-10{margin-top: 10rpx;}
+.mt-20{margin-top: 20rpx;}
+.p-20{padding: 20rpx;}
+.text-red{color: red;}
+.row{width: 100%;}
+
+.on{border-bottom:2px solid red;color:red;}
+
+
+.toast{position: fixed;bottom: 15%;width: 100%;z-index: 1111;text-align: center;color:#fff;}
+.toast .toast-mask{display:inline-block;background-color: #000;width: 30%;padding: 20rpx;border-radius: 10rpx;}
+.loading image{width: 100prx;height: 100rpx;}
+.loading .no-data{padding: 40rpx;color: #5d5d5d;font-size: 28rpx;}
+::-webkit-scrollbar{
+  width:0;
+  height:0;
+  color:transparent;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 

@@ -1,0 +1,40 @@
+<view >
+    <slideTab tList="{{statusType}}"   bind:changeCurrent="swichNav" currentTab="{{currentType}}" >
+      <swiper current="{{currentType}}" duration="300" bindchange="bindChange" style="height: {{windowHeight-35}}px;margin-top:35px;">
+        <block>
+          <swiper-item wx:for="{{list}}">
+            <view class="no-order" hidden="{{item.length ? true : false}}">
+              <image src="../../assets/imgs/no-order.png" class="no-order-img"></image>
+              <view class="text">暂无订单</view>
+            </view>
+            <scroll-view scroll-y="true" class="order-list" scroll-with-animation="true" lower-threshold="1" bindscrolltolower="scrolltolower" style="height: {{windowHeight-35}}px;" hidden="{{item ? flase : true}}">
+              <view class="a-order" wx:for="{{item}}"  wx:key="childIndex" wx:for-item="childItem" >
+                <view class="order-date">
+                    <view class="date-box">下单时间：{{childItem.dateAdd}}</view>
+                    <view class="status {{(childItem.status==-1 || childItem.status==4) ? '':'red'}}">{{item.statusStr}}</view>
+                </view>
+                <view class="goods-info" bindtap="orderDetail" data-id="{{childItem.id}}">
+                    <view class="goods-des">
+                      <view>订单号 : {{childItem.orderNumber}} </view>
+                      <view wx:if="{{childItem.remark && childItem.remark != ''}}">备注： {{item.remark}}</view>
+                    </view>
+                </view>
+                <view >
+                    <scroll-view class="goods-img-container" scroll-x="true">
+                        <view class="img-box" wx:for="{{goodsMap[currentType][childItem.id]}}" wx:for-item="child_item">
+                            <image src="{{child_item.pic}}" class="goods-img"></image>
+                        </view>
+                    </scroll-view>
+                </view>
+                <view class="price-box">
+                    <view class="total-price">合计：¥ {{childItem.amountReal}}</view>
+                    <view class="btn cancel-btn" hidden="{{childItem.status==0? false : true}}" bindtap="cancelOrderTap"  data-id="{{childItem.id}}">取消订单</view>
+                    <view class="btn topay-btn" hidden="{{childItem.status==0? fslse : true}}" bindtap="toPayTap" data-id="{{childItem.id}}" data-money="{{childItem.amountReal}}">马上付款</view>        
+                </view>  
+              </view>
+            </scroll-view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </slideTab>
+</view>

@@ -1,0 +1,12 @@
+{
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#FB5D5D",
+  "onReachBottomDistance":10,
+  "usingComponents": {
+    "slideTab": "../../components/navigator/index",
+    "productBox":"../../components/product_box/index",
+    "swiperImg":"../../components/swiper_img/index",
+    "loadmore":"../../components/loadmore/index"
+  },
+  "navigationBarTitleText": "首页"
+}

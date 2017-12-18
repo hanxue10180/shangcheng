@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/shop-cart/index",
+    "pages/my/index",
+    "pages/product_list/index",
+    "pages/goods-details/index",
+    "pages/to-pay-order/index",
+    "pages/recharge/index",
+    "pages/withdraw/index",
+    "pages/select-address/index",
+    "pages/order-list/index",
+    "pages/my-coupon/index",
+    "pages/address-add/index",
+    "pages/notice/show",
+    "pages/order-details/index",
+    "pages/classify/index",
+    "pages/search/index",
+    "pages/my-info/index",
+    "pages/my-collection/index",
+    "pages/my-refund/index",
+    "pages/my-footprint/index",
+    "pages/my-customerService/index",
+    "pages/my-setUp/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "#ffffff",
+    "navigationBarTitleText": "欧恒集成灶",
+    "navigationBarBackgroundColor": "#e02e24",
+    "backgroundColor": "#e02e24"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "red",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/imgs/nav/home-off.png",
+        "selectedIconPath": "assets/imgs/nav/home-on.png"
+      },
+      {
+        "pagePath": "pages/classify/index",
+        "iconPath": "assets/imgs/nav/search-off.png",
+        "selectedIconPath": "assets/imgs/nav/search-on.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/shop-cart/index",
+        "iconPath": "assets/imgs/nav/cart-off.png",
+        "selectedIconPath": "assets/imgs/nav/cart-on.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "assets/imgs/nav/my-off.png",
+        "selectedIconPath": "assets/imgs/nav/my-on.png",
+        "text": "我的"
+      }
+    ]
+  }
+}
