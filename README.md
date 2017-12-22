@@ -1,5 +1,11 @@
+<style>
+img{
+    width: 60%;
+    padding-left: 20%;
+}
+</style>
 小程序截图
-![1](https://github.com/hanxue10180/shangcheng/blob/master/assets/imgs/screenshot/Screenshot_2017-12-20-10-50-06.jpg =300)
+![1](https://github.com/hanxue10180/shangcheng/blob/master/assets/imgs/screenshot/Screenshot_2017-12-20-10-50-06.jpg)
 
 ![2](https://github.com/hanxue10180/shangcheng/blob/master/assets/imgs/screenshot/Screenshot_20171220-105030.png)
 
